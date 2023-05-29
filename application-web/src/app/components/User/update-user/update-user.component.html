@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update User</title>
+  </head>
+  <body>
+    <div>
+      <app-navbar></app-navbar>
+      <div class="form">
+        <h2>Atualize sua conta</h2>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <div>
+            <div class="input-label">
+              <label for="email">Email:</label>
+              <input
+                id="email"
+                formControlName="email"
+                type="email"
+                name="email"
+                placeholder="email"
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <div class="input-label">
+              <label for="currentPassword">Senha Atual:</label>
+              <input
+                id="currentPassword"
+                type="password"
+                name="currentPassword"
+                placeholder="currentPassword"
+                formControlName="currentPassword"
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <div class="input-label">
+              <label for="password">Nova senha:</label>
+              <input
+                id="password"
+                formControlName="password"
+                type="password"
+                name="password"
+                placeholder="password"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <div class="input-label">
+              <label for="confirmPassword"
+                >Confirme novamente sua nova senha:</label
+              >
+              <input
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                type="password"
+                name="confirmPassword"
+                placeholder="confirmPassword"
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <div>
+              <input
+                [disabled]="!form.valid"
+                type="submit"
+                value="Atualizar"
+                class="submit"
+              />
+            </div>
+          </div>
+          <div class="error-message" *ngIf="errorMessage">
+            {{ errorMessage }}
+          </div>
+          <div class="success-message" *ngIf="successMessage">
+            {{ successMessage }}
+          </div>
+          <button (click)="deleteUser(user.id)">Excluir conta</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

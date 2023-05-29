@@ -1,0 +1,45 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Users</title>
+  </head>
+  <body>
+    <div>
+      <div>
+          <div>
+              <h1>View Users</h1>
+              <button routerLink="/create-user">Add User</button>
+              <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Password date reset</th>
+                      <th scope="col">Email Verificado</th>
+                      <th scope="col">Criado em</th>
+                      <th scope="col">Última atualização</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let user of users">
+                      <th scope="row">{{user.id}}</th>
+                      <td>{{user.email}}</td>
+                      <td>{{user.password_reset_date}}</td>
+                      <td>{{user.verification_email}}</td>
+                      <td>{{user.created_date}}</td>
+                      <td>{{user.updated_date}}</td>
+                      <td>
+                        <button routerLink="/updateUser/{{user.id}}">Edit</button>
+                        <button (click)="deleteUser(user.id)">Delete</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+      </div>
+  </div>
+  </body>
+  </html>

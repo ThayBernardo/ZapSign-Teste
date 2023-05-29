@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <app-navbar></app-navbar>
+      <div class="form">
+        <h2>Crie seus documentos</h2>
+        <form [formGroup]="form" (ngSubmit)="createDocument()">
+          <div>
+            <div class="input-label">
+              <label for="name">Nome do documento:</label>
+              <input
+                id="name"
+                formControlName="name"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              />
+            </div>
+          </div>
+          <div class="input-label">
+            <label for="company_associated">Empresa:</label>
+            <select
+              id="company_associated"
+              formControlName="company_associated"
+            >
+              <option *ngFor="let company of companys" [value]="company.id">
+                {{ company.name }}
+              </option>
+            </select>
+          </div>
+          <div>
+            <div class="input-label">
+              <label for="created_by">Created By</label>
+              <select id="created_by" formControlName="created_by">
+                <option [value]="user?.id">{{ user?.email }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-label">
+            <label for="date_limit">Data limite:</label>
+            <input
+              id="date_limit"
+              formControlName="date_limit"
+              type="date"
+              name="date_limit"
+              placeholder="Date Limit"
+              required
+            />
+          </div>
+          <div>
+            <div>
+              <input
+                [disabled]="!form.valid"
+                type="submit"
+                value="Submit"
+                class="submit"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

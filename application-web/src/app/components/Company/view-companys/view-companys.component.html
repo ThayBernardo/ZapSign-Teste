@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Users</title>
+  </head>
+  <body>
+    <div>
+      <app-navbar></app-navbar>
+      <div class="container">
+        <div>
+          <h1>Empresas</h1>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">TimeZone</th>
+                <th scope="col">Criado em</th>
+                <th scope="col">Última atualização</th>
+                <th scope="col">Linguagem</th>
+                <th scope="col">Usuários associados</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let company of companys">
+                <td>{{ company.name }}</td>
+                <td>{{ company.time_zone }}</td>
+                <td>
+                  {{ company.created_date | date : "dd/MM/yyyy HH:mm:ss" }}
+                </td>
+                <td>
+                  {{ company.updated_date | date : "dd/MM/yyyy HH:mm:ss" }}
+                </td>
+                <td>{{ company.language }}</td>
+                <td>{{ company.guest_users }}</td>
+                <td>
+                  <button
+                    routerLink="/updateCompany/{{ company.id }}"
+                    class="edit"
+                  >
+                    Edit
+                  </button>
+                  <button (click)="deleteCompany(company.id)" class="delete">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="new-company">
+          <button (click)="redirect()">Nova empresa</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Documents</title>
+  </head>
+  <body>
+    <app-navbar></app-navbar>
+    <div class="container">
+      <div>
+        <div>
+          <h1>Documentos</h1>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">date_limit</th>
+                <th scope="col">Assinado</th>
+                <th scope="col">Criado em</th>
+                <th scope="col">Última atualização</th>
+                <th scope="col">Companhia associada</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let document of documents">
+                <td>{{ document.name }}</td>
+                <td>{{ document.date_limit | date : "dd/MM/yyyy" }}</td>
+                <td>{{ document.signed }}</td>
+                <td>
+                  {{ document.created_date | date : "dd/MM/yyyy HH:mm:ss" }}
+                </td>
+                <td>
+                  {{ document.updated_date | date : "dd/MM/yyyy HH:mm:ss" }}
+                </td>
+                <td>{{ document.company_associated }}</td>
+                <td>
+                  <button
+                    routerLink="/updateDocument/{{ document.id }}"
+                    class="edit"
+                    [disabled]="document.deleted"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    (click)="changeDeleteStatus(document)"
+                    [disabled]="document.deleted"
+                    [innerHTML]="document.deleted ? 'Deletado' : 'Deletar'"
+                    class="delete"
+                  ></button>
+                  <button
+                    (click)="signDocument(document)"
+                    [disabled]="
+                      document.signed ||
+                      document.deleted ||
+                      isDateLimitExceeded(document.date_limit)
+                    "
+                    [innerHTML]="document.signed ? 'Assinado' : 'Assinar'"
+                    class="signed"
+                  ></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="new-document">
+          <button (click)="redirect()">Novo documento</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

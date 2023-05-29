@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+</head>
+<body>
+    <div class="modal">
+      <div class="itens">
+        <h2>Crie sua conta</h2>
+          <form [formGroup]="form" (ngSubmit)="createUser()">
+            <div>
+              <div class="label-input">
+                <label for="email">Email:</label>
+                <input id="email" formControlName="email" type="email" name="email" placeholder="Email" required>
+              </div>
+            </div>
+            <div>
+              <div class="label-input">
+                <label for="password">Senha:</label>
+                <input id="password" formControlName="password" type="password" name="password" placeholder="Senha" required>
+              </div>
+            </div>
+            <div>
+              <div class="label-input">
+                <label for="confirmPassword">Confirme sua senha:</label>
+                <input id="confirmPassword" formControlName="confirmPassword" type="password" name="confirmPassword" placeholder="Confirme sua senha" required>
+              </div>
+            </div>
+            <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+            <div>
+              <input class="submit" [disabled]="!form.valid" type="submit" value="Submit">
+            </div>
+          </form>
+      </div>
+    </div>
+</body>

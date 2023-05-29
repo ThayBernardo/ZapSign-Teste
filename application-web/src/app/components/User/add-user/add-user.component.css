@@ -1,0 +1,75 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  background: #121212;;
+  border-radius: 8px;
+}
+
+.itens {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-family: Arial;
+  color: #EDEDED;
+}
+
+label {
+  color: #EDEDED;
+  font-size: 16px;
+  font-family: Arial;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 350px;
+  height: 25px;
+  background: #212121;
+  border: 2px solid #2E2E2E; 
+  border-radius: 4px;
+  color: #EDEDED;
+  font-family: Arial;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.submit {
+  margin-top: 16px;
+  width: 375px;
+  height: 50px;
+  background: #FFC10C;
+  cursor: pointer;
+  color: #212121;
+  font-weight: 900;
+  border: none;
+}
+
+.submit:hover {
+  background: #F4C643;
+}
+
+.submit:disabled {
+  background: #212121;
+  cursor: not-allowed;
+  color: #EDEDED;
+}
+
+.error-message {
+  color: red;
+  font-family: Arial;
+  margin-left: 75px;
+  font-weight: 700;
+  margin-top: 15px; 
+}

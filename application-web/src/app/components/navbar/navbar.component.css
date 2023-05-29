@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial;
+  font-size: 20px;
+  margin-left: 300px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.links {
+  margin-left: 420px;
+}
+
+.title {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  font-family: Arial;
+  color: #121212;
+}
+
+a:hover {
+  color: #5e5e5e;
+}
+
+span {
+  margin: 30px;
+}
+
+.dev {
+  color: #ffc10c;
+}

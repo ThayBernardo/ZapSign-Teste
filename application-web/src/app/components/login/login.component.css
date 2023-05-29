@@ -1,0 +1,83 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  background: #121212;
+  border-radius: 8px;
+}
+
+a {
+  color: white;
+  display: flex;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-family: Arial;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a:hover {
+  color: #d2d9d9;
+}
+
+.itens {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-family: Arial;
+  color: #ededed;
+}
+
+label {
+  color: #ededed;
+  font-size: 16px;
+  font-family: Arial;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 350px;
+  height: 25px;
+  background: #212121;
+  border: 2px solid #2e2e2e;
+  border-radius: 4px;
+  color: #ededed;
+  font-family: Arial;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+button {
+  margin-top: 16px;
+  width: 375px;
+  height: 50px;
+  background: #ffc10c;
+  cursor: pointer;
+  color: #212121;
+  font-weight: 900;
+  border: none;
+}
+
+button:hover {
+  background: #f4c643;
+}
+
+.error-message {
+  color: red;
+  font-family: Arial;
+  margin-left: 90px;
+  font-weight: 700; 
+  margin-top: 15px;
+}

@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: Arial;
+  color: #121212;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial;
+  font-size: 20px;
+  margin-left: 300px;
+  margin-top: 15px;
+}
+
+a {
+  text-decoration: none;
+  font-family: Arial;
+  color: #121212;
+  margin-left: 600px;
+}
+
+a:hover {
+  color: #5E5E5E;
+}
+
+.dev {
+  color: #FFC10C;
+}
+
+.title {
+  margin-top: 330px;
+  margin-left: 300px;
+}
+
+.title-emphasis {
+  color: #FFC10C;
+}
+
+.create-account {
+  width: 150px;
+  height: 56px;
+  border: none;
+  background-color: #FFC10C;
+  font-size: 16px;
+  border-radius: 4px;
+  font-weight: 900;
+  margin-top: 35px;
+  cursor: pointer;
+}
+
+.create-account:hover {
+  background-color: #F4C643;
+}
+
+.banner {
+  position: fixed;
+  top: 0;
+  width: 450px;
+  height: 600px;
+  margin-left: 1100px;
+  background-color: #F0E0B1;
+}
+
+.image {
+  position: fixed;
+  z-index: 3;
+  top: 300px;
+  margin-left: 900px;
+  width: 500px;
+}
+
+.line {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  margin-left: 1600px;
+  background-color: #121212;
+  height: 480px;
+  width: 3px;
+}
+
+.line-two {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  margin-left: 1150px;
+  background-color: #121212;
+  height: 480px;
+  width: 3px;
+}
